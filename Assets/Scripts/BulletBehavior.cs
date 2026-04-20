@@ -18,9 +18,9 @@ public class BulletBehavior : MonoBehaviour
     {
         //Increases score and destroys coin
         if (collision.gameObject.CompareTag("Enemy")){
-            AmmoPool.Instance.ReturnBullet(gameObject);
             collision.gameObject.GetComponent<ZombieBehavior>().takeDamage();
         }
+        AmmoPool.Instance.ReturnBullet(gameObject);
     }
 
     

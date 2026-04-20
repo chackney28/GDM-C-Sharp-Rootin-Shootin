@@ -8,7 +8,7 @@ public class AmmoPool : MonoBehaviour
     public static AmmoPool Instance { get; private set; }
     
     public GameObject bulletPrefab;
-    public Queue<GameObject> activeBullets = new Queue<GameObject>();
+    public List<GameObject> activeBullets = new List<GameObject>();
     
     void Awake()
     {
@@ -25,18 +25,14 @@ public class AmmoPool : MonoBehaviour
 
     public GameObject GetObject()
     {
-        if (activeBullets.Count > 0){
-            GameObject obj = activeBullets.Dequeue();
-            obj.SetActive(true);
-            return obj;
-        }
-
-        return Instantiate(bulletPrefab);
+        GameObject newBullet = Instantiate(bulletPrefab);
+        activeBullets.Add(newBullet);
+        return newBullet;
     }
     
     public void ReturnBullet(GameObject bullet)
     {
-        bullet.SetActive(false);
-        activeBullets.Enqueue(bullet);
+        activeBullets.Remove(bullet);
+        Destroy(bullet);
     }
 }

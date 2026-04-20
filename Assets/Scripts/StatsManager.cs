@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class StatsManager : MonoBehaviour
 {
+
+    
     [Header("Movement Stats")]
     public float baseSpeed = 2.5f;
     public float speedMult = 1f;

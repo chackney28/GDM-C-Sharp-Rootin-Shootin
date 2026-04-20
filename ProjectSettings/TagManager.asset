@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - HpText1
+  - HpText2
+  - HpText3
+  - WaveText
   layers:
   - Default
   - TransparentFX

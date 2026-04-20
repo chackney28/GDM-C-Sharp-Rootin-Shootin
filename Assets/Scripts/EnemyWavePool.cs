@@ -37,9 +37,9 @@ public class EnemyWavePool : NetworkBehaviour
             enemy.GetComponent<NetworkObject>().Despawn();
         }
         Destroy(enemy);
+        AudioManager.Instance.PlaySoundEffect(AudioManager.Instance.enemyDeathSound);
         if (activeEnemies.Count == 0){
             GameManager.Instance.changeWave(1);
-            SpawningBehavior.Instance.Spawn();
         }
     }
 }

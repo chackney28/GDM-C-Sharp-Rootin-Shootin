@@ -16,6 +16,20 @@ Any feedback on how to fix the issues would be greatly appreciated.
 
 
 
+How to play:
+
+Using the standard WSAD and a mouse pointer to shoot system, the purpose is to shoot down Zombies getting to your barn.
+
+Dying merely stuns you for a hot second, what really matters is how your barn is doing. Try to see how long you can last.
+
+
+
+Setup:
+
+Download the file, Open in unity, and run from the TitleScreen scene.
+
+
+
 How to run a mirror in Unity:
 
 1. Open Unity
@@ -42,6 +56,14 @@ How to test multiplayer:
 
 
 
+Project Structure:
+
+The game is split amongst 5 scenes. One for the title screen, 2 for two different arenas, 1 for dying, and 1 seeing scores.
+
+You'll typically going between the title to a arena to death and repeating.
+
+
+
 Key Scripts:
 Manager - GameManager, Spawner, AmmoPool, NetworkManager: Fulfills the Singleton/Manager requirement
 
@@ -55,19 +77,5 @@ Known Issue:
 
 \-When doing multiplayer, both of the barrels focus on the cursor at once, but only one still shoots
 
-\-If spawning does work it doesn't work with the Client side
-
-&#x20; -To compound this, when checking there is no way to check for server and client, despite the engine yelling at my for not doing so
-
-\-Shooting is weird with distance and what not because of the way I set up the pool for Bullets, most likely the first thing to get fixed
-
-\-Zombies do not chase you because the logic for them casing you was abandoned when using a Network based system
-
-&#x20; -They still have collision, they just won't actively hunt you
-
-\-The player doesn't game over, mostly because the Scene to go to game over doesn't exist currently
-
-
-
-This project has been rough, mostly because of the Network implementation, but it seems more like a rough growing phase then anything. The plan is to iron out the numerous bugs with some much needed insight. I know it's not up to my standards, but I hope you can see that I put in effort so far and am willing to keep on going for the rest of the project.
+\-Leaving during a game puts the other player into limbo
 
